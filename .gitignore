@@ -1,0 +1,4 @@
+venv/
+build/
+check_sid_status.spec
+dist/
