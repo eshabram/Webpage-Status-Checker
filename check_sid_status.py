@@ -1,6 +1,7 @@
 import time
 import os
 import subprocess
+import requests
 
 def send_notification(title, message):
     # Use PowerShell to display a toast notification
@@ -8,7 +9,8 @@ def send_notification(title, message):
     subprocess.Popen(ps_script, shell=True)
 
 def ping(address):
-    return not os.system('ping %s -n 1' % (address,))
+    request = requests.get('https://www.spaceisdirty.com')
+    return request.ok
 
 if __name__ == "__main__":
     while True:
